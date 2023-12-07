@@ -18,10 +18,11 @@
 <br>
 
 ### Data description
-
-- '초록', 'ipc코드' 2개의 열로 구성
+- 데이터는 `pp_b.csv` 파일과 `ipc_b.txt` 파일
+- csv 파일은 '초록', 'ipc코드' 2개의 열로 구성
 - 초록에는 전처리를 마친 해당 특허의 초록이 존재
 - ipc코드에는 [0, 0, 1, ..., 0]과 같이 해당하는 label은 1, 해당하지 않는 label은 0으로 binary하게 coding 되어 있음
+- txt 파일은 해당 데이터에 존재하는 ipc 코드의 dictionary
   
 <br>
 
@@ -29,3 +30,4 @@
 - 손실함수로는 Balanced focal loss 사용
 - 평가 지표로는 Accuracy를 사용하였으나, F1 score등의 기타 metric 권장
 - Epoch 하나 당 약 40분 소요 (학습 환경에 따라 달라질 수 있음)
+- 학습 후 최적의 모델을 `bert_b.pth`로 저장
